@@ -26,7 +26,10 @@ export const normalize = css`
   body {
     margin: 0;
     background-color: #ecf0f6;
-    font-family: Tahoma, sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #24292e;
   }
   main {
     display: block;
@@ -46,6 +49,8 @@ export const normalize = css`
   }
   a {
     background-color: transparent;
+    color: #0366d6;
+    text-decoration: none;
   }
   abbr[title] {
     border-bottom: none;
