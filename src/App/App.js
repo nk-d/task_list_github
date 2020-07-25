@@ -2,6 +2,7 @@ import React from 'react';
 import { Wrapper, Container, Normalize } from './AppStyles';
 import { Header } from '../components/Header';
 import { InputSearch } from "../components/InputSearch";
+import { Repositories } from "../components/Repositories";
 
 export const App = () => {
   return (
@@ -11,7 +12,7 @@ export const App = () => {
         <Normalize />
         <Header />
         <InputSearch />
-        Some content
+        <Repositories />
 
       </Container>
     </Wrapper>

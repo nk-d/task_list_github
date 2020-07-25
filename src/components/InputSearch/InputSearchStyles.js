@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {ReactComponent as Search} from './icons/search.svg';
+import { ReactComponent as Search } from './icons/search.svg';
+import { ReactComponent as Spin } from './icons/spinner.svg';
 
 export const Container = styled.nav`
   background-color: #f6f8fa;
@@ -49,6 +50,11 @@ export const Button = styled.button`
 `;
 
 export const SearchButton = styled(Search)`
+  width: 15px;
+  height: 15px;
+`;
+
+export const Spinner = styled(Spin)`
   width: 15px;
   height: 15px;
 `;
