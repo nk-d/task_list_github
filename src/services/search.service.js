@@ -1,12 +1,14 @@
 import { apiConstants } from "../constants";
 
-export const getResult = searchValue => {
+export const getResult = (searchValue, currentPage) => {
   const requestOptions = {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
   };
 
-  return fetch(apiConstants.API_SEARCH_URL + '?q=' + searchValue, requestOptions).then(handleResponse);
+  const query = `?q=${searchValue}&page=${currentPage || 1}&per_page=${apiConstants.PER_PAGE}`;
+
+  return fetch(apiConstants.API_SEARCH_URL + query, requestOptions).then(handleResponse);
 }
 
 export const getMyProjects = () => {

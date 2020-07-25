@@ -15,10 +15,9 @@ export const LegacyInputSearch = ({ dispatch, loading }) => {
     e.preventDefault();
 
     if (toQuery(value) && !loading) {
-      console.log('submitHandler');
-
       dispatch(searchActions.getSearchResult(
-        toQuery(value)
+        toQuery(value),
+        1
       ));
     }
   };

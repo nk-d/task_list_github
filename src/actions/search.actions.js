@@ -6,16 +6,18 @@ export const searchActions = {
   getAll
 };
 
-function getSearchResult (searchValue) {
+function getSearchResult (searchValue, currentPage) {
   return dispatch => {
     dispatch(request(searchValue));
 
-    getResult(searchValue)
+    getResult(searchValue, currentPage)
       .then(
         repos => {
           dispatch(success({
             items: repos.items,
-            count: repos.total_count
+            count: repos.total_count,
+            page: currentPage || 1,
+            searchValue: searchValue || ''
           }));
         },
         error => {
