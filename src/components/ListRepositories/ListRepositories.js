@@ -1,8 +1,14 @@
 import React from 'react';
-import { Container, HeaderLevel2, RepoList } from './ListRepositoriesStyles';
 import { ShowRepository } from '../ShowRepository';
 import { connect } from 'react-redux';
 import { Pagination } from "../Pagination";
+import { Container,
+  HeaderLevel2,
+  RepoList,
+  Blankslate,
+  SearchIcon,
+  HeaderEmpty,
+  Link } from './ListRepositoriesStyles';
 
 export const LegacyListRepositories = ({ items, count, totalPages, error, loading}) => {
   const listRepos = items ? items.map(item => <ShowRepository key={item.id} repository={item} />) : '';
@@ -12,6 +18,17 @@ export const LegacyListRepositories = ({ items, count, totalPages, error, loadin
 
   if (loading)
     return 'loading'
+
+  if (count === 0)
+    return(
+      <Blankslate>
+        <SearchIcon />
+        <HeaderEmpty>
+          We couldn’t find any repositories
+        </HeaderEmpty>
+        You could try on <Link href='https://github.com/search'>Github</Link>
+      </Blankslate>
+    )
 
   return (
     <Container>

@@ -26,7 +26,7 @@ export const LegacyPagination = ({ dispatch, page, searchValue, currentPage, tot
 
   const pages = () => {
     let NumGroup = 3;
-    let focusNumGroup = 7;
+    let focusNumGroup = 5;
     let block = [];
 
     if ( totalPages <= 1 ){
